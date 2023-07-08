@@ -1,0 +1,50 @@
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.navBarList {
+    list-style-type: none;
+    display: flex;
+}
+
+.navBarItem {
+    float: right;
+    padding: 20px;
+}
+
+/* Text Styling */
+
+.navTitle {
+    vertical-align: middle;
+    padding: 20px;
+    color: rgb(100, 50, 255);
+}
+
+.navBarItemText {
+    color: rgb(100, 50, 255);
+}
+
+.navBarItemText:hover {
+    color: blue;
+}
+
+a {
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+/* Divs */
+body {
+    background-color: rgb(255, 255, 235);
+}
+
+main {
+    
+}
+
+aside {
+
+}

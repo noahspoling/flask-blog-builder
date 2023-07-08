@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}"></link>
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <h1 class="navTitle">ByteBlog</h1>
+        </a>
+        <ul class="navBarList">
+            <li class="navBarItem">
+                <a href="/Posts">
+                    <h5 class="navBarItemText">
+                        Posts
+                    </h5>
+                </a>
+            </li>
+            <li class="navBarItem">
+                <a href="/Projects">
+                    <h5 class="navBarItemText">
+                        Projects
+                    </h5>
+                </a>
+            </li>
+            <li class="navBarItem">
+                <a href="/AboutMe">
+                    <h5 class="navBarItemText">
+                        About Me
+                    </h5>
+                </a>
+            </li>
+            <li class="navBarItem">
+                <a href="/ContactMe">
+                    <h5 class="navBarItemText">
+                        Contact Me
+                    </h5>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2>My Projects</h2>
+    </main>
+    <aside>
+        <h3>Projects Aside</h3>
+    </aside>
+
+</body>
+</html>

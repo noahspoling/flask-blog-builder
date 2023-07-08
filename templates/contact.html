@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}"></link>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='contactMeLayout.css') }}"></link>
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <h1 class="navTitle">ByteBlog</h1>
+        </a>
+        <ul class="navBarList">
+            <li class="navBarItem">
+                <a href="/Posts">
+                    <h3 class="navBarItemText">
+                        Posts
+                    </h3>
+                </a>
+            </li>
+            <li class="navBarItem">
+                <a href="/Projects">
+                    <h3 class="navBarItemText">
+                        Projects
+                    </h3>
+                </a>
+            </li>
+            <li class="navBarItem">
+                <a href="/AboutMe">
+                    <h3 class="navBarItemText">
+                        About Me
+                    </h3>
+                </a>
+            </li>
+            <li class="navBarItem">
+                <a href="/ContactMe">
+                    <h3 class="navBarItemText">
+                        Contact Me
+                    </h3>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <form>
+            <div class="formGroup">
+                <label for="name">Name</label>
+                <input type="text" name="Name" id="inputName"/>
+            </div>
+            <div class="formGroup">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="inputEmail">
+            </div>
+            <div class="formGroup">
+                <label for="comment">Comment</label>
+                <textarea name="comment" id="inputComment" cols="30" rows="5"></textarea>
+            </div>
+            <div class="formGroup">
+                <button type="submit">Send</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+    </main>
+    <aside>
+
+</body>
+</html>
