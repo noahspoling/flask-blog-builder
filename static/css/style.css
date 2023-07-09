@@ -1,4 +1,18 @@
+:root {
+    --pale-purple: rgb(200, 150, 255);
+    --light-purple: rgb(150, 75, 255);
+    --rich-purple: rgb(100, 50, 255);
+    --dark-purple: rgb(50, 25, 127);
+    
+    --deep-yellow: rgb(204, 204, 188);
+    --pale-yellow: rgb(255, 255, 235);
+}
+
+
 nav {
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--pale-yellow);
     display: flex;
     flex-direction: row;
 }
@@ -18,7 +32,7 @@ nav {
 .navTitle {
     vertical-align: middle;
     padding: 20px;
-    color: rgb(100, 50, 255);
+    color: var(--primary-color);
 }
 
 .navBarItemText {
@@ -38,7 +52,9 @@ a {
 
 /* Divs */
 body {
-    background-color: rgb(255, 255, 235);
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--deep-yellow);
 }
 
 main {

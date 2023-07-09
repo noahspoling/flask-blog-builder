@@ -1,0 +1,10 @@
+
+{
+    "packages" : [
+        {
+            "name" : "htmx",
+            "cdn_url" : "https://unpkg.com/htmx.org@1.9.2",
+            "path" : "htmx.min.js"
+        }
+    ]
+}
