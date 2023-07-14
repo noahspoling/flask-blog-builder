@@ -5,50 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Posts</title>
     <script src="{{ url_for('static', filename='js/htmx.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}"></link>
 </head>
-<body>
-    <nav>
-        <a href="/">
-            <h1 class="navTitle">ByteBlog</h1>
-        </a>
-        <ul class="navBarList">
-            <li class="navBarItem">
-                <a href="/Posts">
-                    <h3 class="navBarItemText">
-                        Posts
-                    </h3>
-                </a>
-            </li>
-            <li class="navBarItem">
-                <a href="/Projects">
-                    <h3 class="navBarItemText">
-                        Projects
-                    </h3>
-                </a>
-            </li>
-            <li class="navBarItem">
-                <a href="/AboutMe">
-                    <h3 class="navBarItemText">
-                        About Me
-                    </h3>
-                </a>
-            </li>
-            <li class="navBarItem">
-                <a href="/ContactMe">
-                    <h3 class="navBarItemText">
-                        Contact Me
-                    </h3>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <h2>My Posts</h2>
-    </main>
-    <aside>
-        <h3>Aside</h3>
-    </aside>
+<body id="root">
+    <div id="navbar-root">
+    </div>
+    <hr class="nav-line-break">
+    <div id="content-root">
+        <main>
+            <h2>About Me</h2>
+        </main>
+        <aside>
+            <h3>Aside</h3>
+        </aside>
+    </div>
+    <!--
+        IMPORT COMPONENTS IN THIS SCRIPT TAG
+    -->
+    <script type="module">
+        import navbar from "{{ url_for('static', filename='js/components/navbar.js') }}"
+        const root = document.getElementById("navbar-root")
+        navbar(root)
+        // Your Arrow.js code here!
+    </script>
 
 </body>
 </html>

@@ -39,5 +39,5 @@ def update_from_json_list(path):
         print(f"Package {name}:\n")
         check_and_update_package(
             package["cdn_url"],
-            os.path.join(os.getcwd(), "static", "js", package["path"])
+            os.path.join(os.getcwd(), "static", "js", "packages", package["path"])
         )

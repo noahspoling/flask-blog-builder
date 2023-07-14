@@ -5,6 +5,11 @@
             "name" : "htmx",
             "cdn_url" : "https://unpkg.com/htmx.org@1.9.2",
             "path" : "htmx.min.js"
+        },
+        {
+            "name" : "arrowJS",
+            "cdn_url" : "https://esm.sh/v128/@arrow-js/core@1.0.0-alpha.9/esnext/core.mjs",
+            "path" : "arrow.js"
         }
     ]
 }
