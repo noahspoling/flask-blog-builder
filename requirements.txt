@@ -1,4 +1,4 @@
 flask
-pymongo
-pymongo[srv]
+flask_alchemy
+markdown
 python-dotenv
