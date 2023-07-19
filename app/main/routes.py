@@ -1,16 +1,11 @@
-from flask import Flask, render_template
-from services.check_packages import update_from_json_list
-from services.documents_service import uploadDocument
+from flask import Blueprint, jsonify, request
 
 
-#Check JS Packages
-update_from_json_list('config/jsPackages.json')
+# from markdown_cms.posts.services import create_post, get_all_posts, get_post_by_id, update_post, delete_post
 
-app = Flask(__name__)
 
-'''
-ROUTES
-'''
+app = Blueprint('main', __name__)
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -30,13 +25,3 @@ def aboutMe():
 @app.route('/ContactMe')
 def contactMe():
     return render_template("contact.html")
-
-'''
-Upload test
-'''
-
-uploadDocument('./testFile/test.md')
-
-
-if __name__ == '__main__':
-    app.run(debug=True)

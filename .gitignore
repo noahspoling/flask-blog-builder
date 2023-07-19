@@ -2,3 +2,6 @@
 
 /.venv
 /static/js/packages/*
+
+**/__pycache__/
+**/testFile/

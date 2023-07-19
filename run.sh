@@ -15,5 +15,5 @@ echo "Installing dependencies..."
 pip install -r requirements.txt
 
 #Run app
-echo "Running app.py..."
-python3 -m app.py
+echo "Running run.py..."
+python run.py
