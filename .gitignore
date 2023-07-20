@@ -5,3 +5,8 @@
 
 **/__pycache__/
 **/testFile/
+
+/target
+
+# Javascipt Package Directory
+/app/static/js/packages*

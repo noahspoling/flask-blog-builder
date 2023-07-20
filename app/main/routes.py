@@ -1,27 +1,27 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, render_template
 
 
 # from markdown_cms.posts.services import create_post, get_all_posts, get_post_by_id, update_post, delete_post
 
 
-app = Blueprint('main', __name__)
+routesBlueprint = Blueprint('main', __name__)
 
-@app.route('/')
+@routesBlueprint.route('/')
 def index():
     return render_template("index.html")
     
-@app.route('/Posts')
+@routesBlueprint.route('/Posts')
 def posts():
     return render_template("posts.html")
 
-@app.route('/Projects')
+@routesBlueprint.route('/Projects')
 def projects():
     return render_template("projects.html")
   
-@app.route('/AboutMe')
+@routesBlueprint.route('/AboutMe')
 def aboutMe():
     return render_template("about.html")
 
-@app.route('/ContactMe')
+@routesBlueprint.route('/ContactMe')
 def contactMe():
     return render_template("contact.html")

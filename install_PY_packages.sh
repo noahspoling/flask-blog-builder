@@ -12,8 +12,4 @@ echo "Activating virtual environment..."
 source .venv/bin/activate
 
 echo "Installing dependencies..."
-pip install -r requirements.txt
-
-#Run app
-echo "Running run.py..."
-python run.py
+pip install -r pythonRequirements.txt

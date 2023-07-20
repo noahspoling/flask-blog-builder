@@ -1,4 +1,5 @@
 flask
 flask_sqlalchemy
 markdown
+prompt_toolkit
 python-dotenv

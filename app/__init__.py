@@ -1,15 +1,5 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-
-import sys
-import os
-
-# gets parent directory
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
-
-#imports in parent directory i.e. config
 from config import Config
 
 
@@ -21,7 +11,6 @@ post_tags = db.Table('post_tags',
 )
 
 def create_app(config_class=Config):
-
     app = Flask(__name__)
     app.config.from_object(Config)
 
