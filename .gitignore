@@ -9,4 +9,4 @@
 /target
 
 # Javascipt Package Directory
-/app/static/js/packages*
+/app/static/js/packages/*
