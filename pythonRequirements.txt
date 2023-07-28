@@ -1,5 +1,8 @@
 flask
 flask_sqlalchemy
+flask_wtf
+wtform
 markdown
+bleach
 prompt_toolkit
 python-dotenv

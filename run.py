@@ -1,11 +1,7 @@
-from app import create_app
 
-import flask_sqlalchemy
 import platform
 import subprocess
 
-
-print(flask_sqlalchemy.__version__)
 
 if __name__ == '__main__':
     operating_system = platform.system()
@@ -32,6 +28,8 @@ if __name__ == '__main__':
         exit(1)
     
     
+    from app import create_app
+
 
     app = create_app()
     app.run(debug=True)

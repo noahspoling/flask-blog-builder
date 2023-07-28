@@ -9,12 +9,12 @@ allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
 
 def createPost(title, content):
     # takes content and turns it into html
-    html_content = markdown(content)
-    safe_html = clean(html_content, tags=allowed_tags)
+    htmlContent = markdown(content)
+    safe_html = clean(htmlContent, tags=allowed_tags)
 
     post = Post(title=title,
                 content=content,
-                html_content=safe_html,
+                htmlContent=safe_html,
                 published_at=date.today(),
                 updated_at=date.today()
                 )
@@ -22,8 +22,8 @@ def createPost(title, content):
         db.session.add(post)
         db.session.commit()
         return post
-    except:
-        print("An error occurred")
+    except Exception as e:
+        print(f"An error occurred {e}")
         return
 
 def getAllPosts():
@@ -44,7 +44,7 @@ def updatePost(postId, title, content):
         post = getPostById(postId)
         post.title = title
         post.content = content
-        post.html_content = markdown(content)
+        post.htmlContent = markdown(content)
         db.session.commit()
         return post
     except:

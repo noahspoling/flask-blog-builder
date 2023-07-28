@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #If directory exists
-if [ ! -d ".venv"]
+if [ ! -d ".venv" ]
 then
     echo "Creating python virtual environment..."
 
