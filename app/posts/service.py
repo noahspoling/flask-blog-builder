@@ -47,7 +47,8 @@ def updatePost(postId, title, content):
         post.htmlContent = markdown(content)
         db.session.commit()
         return post
-    except:
+    except Exception as e:
+        print(f"An error occured {e}")
         return
 
 def deletePost(postId):
