@@ -1,5 +1,4 @@
 import os
 
 class Config:
-    SECRET_KEY = 'my-key-here'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    SQLALCHEMY_DATABASE_URI = 'sqlite://path_to_in_memory_db'

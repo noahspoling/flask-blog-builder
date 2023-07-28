@@ -1,31 +1,60 @@
 from app import db
 from app.posts.model import Post
 from markdown import markdown
+from bleach import clean
+from datetime import date
+
+allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code', 
+                'em', 'i', 'li', 'ol', 'strong', 'ul']
 
 def createPost(title, content):
+    # takes content and turns it into html
     html_content = markdown(content)
-    post = Post(title=title, content=content, html_content=html_content)
-    db.session.add(post)
+    safe_html = clean(html_content, tags=allowed_tags)
 
-    # TODO: Add rollback support
-    db.session.commit()
-    return post
+    post = Post(title=title,
+                content=content,
+                html_content=safe_html,
+                published_at=date.today(),
+                updated_at=date.today()
+                )
+    try:
+        db.session.add(post)
+        db.session.commit()
+        return post
+    except:
+        print("An error occurred")
+        return
 
 def getAllPosts():
-    return Post.query.all()
+    try:
+        return Post.query.all()
+    except:
+        return
+    
 
 def getPostById(postId):
-    return Post.query.get_or_404(postId)
-
+    try:
+        return Post.query.get_or_404(postId)
+    except:
+        return
+    
 def updatePost(postId, title, content):
-    post = getPostById(postId)
-    post.title = title
-    post.content = content
-    post.html_content = markdown(content)
-    db.session.commit()
-    return post
+    try:
+        post = getPostById(postId)
+        post.title = title
+        post.content = content
+        post.html_content = markdown(content)
+        db.session.commit()
+        return post
+    except:
+        return
 
 def deletePost(postId):
-    post = getPostById(postId)
-    db.session.delete(post)
-    db.session.commit()
+    try:
+        post = getPostById(postId)
+        db.session.delete(post)
+        db.session.commit()
+    except:
+        return
+    
