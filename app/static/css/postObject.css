@@ -1,0 +1,15 @@
+.post {
+    background-color: var(--rich-purple);
+    color: var(--deep-yellow);
+    margin: auto;
+    margin-bottom: 1rem;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.post:hover {
+    background-color: var(--deep-yellow);
+    color: var(--rich-purple);
+    border: 1px solid var(--rich-purple);
+}

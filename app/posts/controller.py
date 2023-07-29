@@ -23,7 +23,8 @@ def posts_list():
         posts = getAllPosts()
         if posts is None:
             return jsonify({"error": "could not fetch posts"}), 400
-        return jsonify([post.toDictionary() for post in posts]), 200
+        return ''.join(render_template('post.html', post=post) for post in posts)
+        #return jsonify([post.toDictionary() for post in posts]), 200
     except Exception as e:
         print(f"An error occurred: {e}")
         return jsonify({"error": "An error occurred"}), 500

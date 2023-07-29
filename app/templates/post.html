@@ -1,0 +1,6 @@
+<!-- Post HTML for paginated list of posts -->
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/postObject.css') }}"/>
+<div class="post">
+    <h1>{{post.title}}</h1>
+    {{post.content | safe}}
+</div>

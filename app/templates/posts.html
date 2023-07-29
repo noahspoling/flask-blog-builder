@@ -7,6 +7,7 @@
     <script src="{{ url_for('static', filename='js/packages/htmx.min.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}"></link>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/postObject.css') }}"></link>
 </head>
 <body id="root">
     <div id="navbar-root">
@@ -14,11 +15,9 @@
     <hr class="nav-line-break">
     <div id="content-root">
         <main>
-            <h2>About Me</h2>
+            <div id="postsContainer" hx-get="/api/v1/post" hx-trigger="load" hx-swap="innerHTML">
+            </div>
         </main>
-        <aside>
-            <h3>Aside</h3>
-        </aside>
     </div>
     <!--
         IMPORT COMPONENTS IN THIS SCRIPT TAG
