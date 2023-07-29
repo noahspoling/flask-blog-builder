@@ -71,10 +71,21 @@ body {
     background-color: var(--deep-yellow);
 }
 
-main {
-    
+button {
+    max-width: 250px;
+    border-radius: 5px;
+    color: rgb(100, 50, 255);
+    padding: 1rem;
+    border-style: none;
+    background: rgb(255, 255, 235);
+
+    transition: all 0.5s ease;
+    transform-origin: center;
 }
+button:hover {
+    border: 1px solid rgb(255, 255, 235);
+    color: rgb(255, 255, 235);
+    background-color: rgb(100, 50, 255);
 
-aside {
-
+    transform: scale(1.1);
 }

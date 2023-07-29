@@ -9,7 +9,7 @@
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}"></link>
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/inputStyling.css') }}"></link>
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/forms/formsGeneralStyling.css') }}"></link>
-    <link rel="stylesheet" href= "{{ url_for('static', filename='css/pages/contactme/contactMeLayout.css') }}"></link>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/contactMeLayout.css') }}"></link>
 </head>
 <body>
     <div id="navbar-root">
@@ -22,7 +22,7 @@
     -->
     <script type="module">
         import navbar from "{{ url_for('static', filename='js/components/navbar.js') }}"
-        import contactForm from "{{ url_for('static', filename='js/components/contactForm.js') }}"
+        import contactForm from "{{ url_for('static', filename='js/components/contentForm.js') }}"
         const headerRoot = document.getElementById("navbar-root")
         navbar(headerRoot)
         const contentRoot = document.getElementById("content-root")

@@ -1,9 +1,7 @@
 .post {
     background-color: var(--rich-purple);
     color: var(--deep-yellow);
-    margin: auto;
     margin-bottom: 1rem;
-    width: 50%;
     padding: 1rem;
     border-radius: 5px;
 }
@@ -12,4 +10,21 @@
     background-color: var(--deep-yellow);
     color: var(--rich-purple);
     border: 1px solid var(--rich-purple);
+}
+
+.fading-out {
+    position: relative;
+    height: 4em;
+    overflow: hidden;
+}
+
+.fading-out::after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1em;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
 }

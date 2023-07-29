@@ -1,0 +1,19 @@
+/*
+     css file for styling used across all forms
+*/
+
+form {
+    background-color: var(--rich-purple);
+    margin-left: auto;
+    margin-right: auto;
+    width: 66%;
+    border-radius: 1rem;
+    padding: 1rem;
+    animation: fadeInUp 0.75s ease-out forwards;
+}
+
+.formGroup {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}

@@ -14,6 +14,10 @@ def index():
 def posts():
     return render_template("posts.html")
 
+@routesBlueprint.route('/AddContent')
+def addContent():
+    return render_template("addContent.html")
+
 @routesBlueprint.route('/Projects')
 def projects():
     return render_template("projects.html")

@@ -1,0 +1,16 @@
+#postsOuterWindow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#leftSideBar {
+    flex: 2;
+}
+#postsContainer {
+    flex-grow: 5;
+}
+
+#rightSideBar {
+    flex: 2;
+}
