@@ -1,3 +1,3 @@
 python install.py
-source .venv/bin/activate.ps1
+source .venv/bin/activate
 python run.py

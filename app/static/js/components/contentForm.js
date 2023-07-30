@@ -63,11 +63,18 @@ const optionState = reactive({
     ]
 })
 
-const form = document.querySelector('form');
+const onFormRequest = (e) => {
+    e.detail.parameters['hx-post'] = optionState.options[optionState.selectedOption].apiRoute;
+};
 
 const onContentOptionChange = (e) => {
-    optionState.selectedOption = parseInt(e.target.value);
-    form.setAttribute("hx-post", optionState.options[optionState.selectedOption].apiRoute)
+    var optionInt = optionState.selectedOption = parseInt(e.target.value);
+    optionState.selectedOption = optionInt;
+    const form = document.querySelector('form');
+    form.addEventListener('htmx:configRequest', onFormRequest);
+    //e.detail.parameters['hx-post'] = optionState.options[optionState.selectedOption].apiRoute;
+    console.log(optionState.options[optionState.selectedOption].apiRoute)
+    console.log(optionState.selectedOption)
 }
 
 watch(() => optionState.selectedOption, (selectedOption) => {

@@ -9,12 +9,21 @@ allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
 
 def createPost(title, content):
     # takes content and turns it into html
-    htmlContent = markdown(content)
-    safe_html = clean(htmlContent, tags=allowed_tags)
+    htmlContent = markdown(content, extensions=['tables', 'fenced_code', 'footnotes', 'meta'], extension_configs={
+    'codehilite': {
+        'use_pygments': False
+    },
+    'footnotes': {
+        'UNIQUE_IDS': True
+    }
+    })
+                           
+    htmlContent = htmlContent.replace('\n', '<br/>')
+    #safe_html = clean(htmlContent, tags=allowed_tags)
 
     post = Post(title=title,
                 content=content,
-                htmlContent=safe_html,
+                htmlContent=htmlContent,
                 published_at=date.today(),
                 updated_at=date.today()
                 )
