@@ -1,4 +1,4 @@
-import {html, reactive, watch} from "../packages/arrow.js"
+import {html, reactive, watch} from "../../packages/arrow.js"
 
 
 const postOptions = html`

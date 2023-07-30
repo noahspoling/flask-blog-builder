@@ -3,6 +3,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.users.form import LoginForm, RegistrationForm
 from app.users.model import User
 from flask_login import LoginManager
+from app import db
 
 login = LoginManager()
 
@@ -31,3 +32,26 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+@userBlueprint.route('/register', methods=["GET", "POST"])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        
+        try:
+            db.session.add(user)
+            db.session.commit()
+            flash('User registered')
+            return redirect(url_for('login'))
+        except Exception as e:
+            print(f"An error occurred: {e}")
+        
+        return render_template('register.html', title='Register', form=form)
+    
+@app.route('/index')
+@login_required
+def index():
+    return "Hello, " + current_user.username

@@ -6,6 +6,8 @@ from flask import Blueprint, jsonify, request, render_template
 
 routesBlueprint = Blueprint('main', __name__)
 
+# Navigation Bar routes
+
 @routesBlueprint.route('/')
 def index():
     return render_template("index.html")
@@ -29,3 +31,35 @@ def aboutMe():
 @routesBlueprint.route('/ContactMe')
 def contactMe():
     return render_template("contact.html")
+
+# Form Routes
+
+# Login existing user
+
+@routesBlueprint.route('/LoginForm')
+def loginForm():
+    return render_template("login.html")
+
+# Form for a new user
+
+@routesBlueprint.route('/RegisterForm')
+def registerForm():
+    return render_template("register.html")
+
+# Route for form to submit the change password request to an email
+
+@routesBlueprint.route('/ForgotPasswordForm')
+def forgotPasswordForm():
+    return render_template("forgotPassword.html")
+
+# Route for the link sent in an email to change the password
+
+@routesBlueprint.route('/ChangeForgottenPasswordForm')
+def changeForgottenPasswordForm():
+    return render_template("changeForgottenPassword.html")
+
+# Change the password of a logged in user
+
+@routesBlueprint.route('/ChangePasswordForm')
+def changePasswordForm():
+    return render_template("changePassword.html")

@@ -1,6 +1,5 @@
 import {html} from "../packages/arrow.js"
 
-
 const navbar = html`
     <nav>
         <a href="/">
@@ -35,6 +34,9 @@ const navbar = html`
                     </h3>
                 </a>
             </li>
+        </ul>
+        <ul>
+
         </ul>
     </nav>
 `

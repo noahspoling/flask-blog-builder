@@ -1,4 +1,4 @@
-import {html} from "../packages/arrow.js"
+import {html} from "../../packages/arrow.js"
 
 
 
