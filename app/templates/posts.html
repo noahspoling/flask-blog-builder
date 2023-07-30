@@ -8,6 +8,8 @@
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/postPageLayout.css') }}"></link>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}"></link>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/pages/posts/postPageStyling.css') }}"></link>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/pages/posts/postPageLayout.css') }}"></link>
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/postObject.css') }}"></link>
 </head>
 <body id="root">
@@ -18,7 +20,7 @@
         <main id="postsOuterWindow">
             <div id="leftSideBar">
                 <a href="/AddContent">
-                    <button>Add Content</button>
+                    <button id="buttonAddContent">Add Content</button>
                 </a>
             </div>
             <div id="postsContainer" hx-get="/api/v1/render/post" hx-trigger="load" hx-swap="innerHTML">

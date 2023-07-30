@@ -1,0 +1,12 @@
+#buttonAddContent {
+    width: 75%;
+    margin-left: 12.5%; margin-right: 12.5%;
+    background-color: var(--rich-purple);
+    color: var(--deep-yellow);
+}
+
+#buttonAddContent:hover {
+    background-color: var(--deep-yellow);
+    color: var(--rich-purple);
+    outline: 1px solid var(--rich-purple);
+}
