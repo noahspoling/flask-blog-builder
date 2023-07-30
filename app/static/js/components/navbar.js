@@ -35,9 +35,12 @@ const navbar = html`
                 </a>
             </li>
         </ul>
-        <ul>
-
-        </ul>
+        <div hx-get="/user/isLoggedIn" hx-trigger="load" hx-swap="innerHTML">
+            <!-- 
+                Loads this section of the navbar based on status of if they are logged in
+                check the user's controller for details
+            -->
+        </div>
     </nav>
 `
 export default navbar;

@@ -2,18 +2,12 @@ from flask import Flask, Blueprint, render_template, request, redirect, url_for,
 from flask_login import current_user, login_user, logout_user, login_required
 from app.users.form import LoginForm, RegistrationForm
 from app.users.model import User
-from flask_login import LoginManager
 from app import db
 
-login = LoginManager()
 
-@login.user_loader
-def load_user(id):
-    return User.Query.get(int(id))
+userBlueprint = Blueprint('users', __name__, url_prefix="/user")
 
-userBlueprint = Blueprint('posts', __name__, url_prefix="/user")
-
-@userBlueprint('/login', methods=["GET", "POST"])
+@userBlueprint.route('/login', methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for("index"))
@@ -51,7 +45,14 @@ def register():
         
         return render_template('register.html', title='Register', form=form)
     
-@app.route('/index')
+@userBlueprint.route('/index')
 @login_required
 def index():
     return "Hello, " + current_user.username
+
+@userBlueprint.route('/isLoggedIn', methods=["GET"])
+def checkSignedIn():
+    if current_user:
+        return ''.join(render_template('htmx/navbarSignedIn.html'))
+    else:
+        return ''.join(render_template('htmx/navbarSignedOut.html'))

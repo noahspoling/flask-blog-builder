@@ -19,7 +19,7 @@
     </div>
     <script type="module">
         import navbar from "{{ url_for('static', filename='js/components/navbar.js') }}"
-        import contactForm from "{{ url_for('static', filename='js/components/contactForm.js') }}"
+        import contactForm from "{{ url_for('static', filename='js/components/forms/contactForm.js') }}"
         const headerRoot = document.getElementById("navbar-root")
         navbar(headerRoot)
         const contentRoot = document.getElementById("content-root")

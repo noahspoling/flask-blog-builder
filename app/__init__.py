@@ -5,6 +5,10 @@ from config import Config
 from app.database.db import db
 from app.posts.controller import postsBlueprint
 from app.main.routes import routesBlueprint
+from app.users.controller import userBlueprint
+from flask_login import LoginManager
+from app.users.model import User
+login = LoginManager()
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -13,6 +17,12 @@ def create_app(config_class=Config):
     app.config.from_object(Config)
 
     db.init_app(app)
+    login.init_app(app)
+    login.login_view = 'users.login'
+    
+    @login.user_loader
+    def load_user(id):
+        return User.Query.get(int(id))
     
     with app.app_context():
         db.create_all()
@@ -26,6 +36,7 @@ def create_app(config_class=Config):
     
     
     app.register_blueprint(routesBlueprint)
+    app.register_blueprint(userBlueprint)
     app.register_blueprint(postsBlueprint)
 
     return app
