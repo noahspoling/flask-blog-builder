@@ -8,50 +8,7 @@
     --pale-yellow: rgb(235, 235, 210);
 }
 
-.navbar-root, .content-root {
-    margin: 0px;
-    padding: 0px;
-}
-nav {
-    padding: 0px;
-    margin: 0px;
-    background-color: var(--deep-yellow);
-    display: flex;
-    flex-direction: row;
-}
-
-.navBarList {
-    list-style-type: none;
-    display: flex;
-    padding: 0px;
-    margin-bottom: 0px;
-}
-
-.navBarItem {
-    float: right;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 /* Text Styling */
-
-.navTitle {
-    vertical-align: middle;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: var(--dark-purple);
-    animation: fadeInUp 0.5s ease-out forwards;
-}
-
-.navBarItemText {
-    color: var(--rich-purple);
-    animation: fadeInUp 0.5s ease-out forwards;
-    padding: 0px;
-}
-
-.navBarItemText:hover {
-    color: var(--dark-purple);
-}
 
 a {
     text-decoration: none;
@@ -74,18 +31,18 @@ body {
 button {
     max-width: 250px;
     border-radius: 5px;
-    color: rgb(100, 50, 255);
+    color: var(--deep-yellow);
     padding: 1rem;
     border-style: none;
-    background: rgb(255, 255, 235);
+    background: var(--rich-purple);
 
     transition: all 0.5s ease;
     transform-origin: center;
 }
 button:hover {
-    border: 1px solid rgb(255, 255, 235);
-    color: rgb(255, 255, 235);
-    background-color: rgb(100, 50, 255);
+    border: 1px solid var(--rich-purple);
+    color: var(--rich-purple);
+    background-color: var(--deep-yellow);
 
     transform: scale(1.1);
 }

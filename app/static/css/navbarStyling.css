@@ -1,0 +1,101 @@
+/* Contains styling for navbar elements not in the rest of the code */
+
+.navbar-root, .content-root {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    position: relative;
+}
+/* CSS for Desktop */
+@media screen and (min-width: 992px) {
+    /* Add your CSS for Desktop here */
+    nav::after {
+        content: "";
+        background: url("../img/codingNavBackground.jpg");
+    }
+}
+
+/* CSS for Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Add your CSS for Tablet here */
+    nav::after {
+        content: "";
+        background: url("../img/codingNavBackground.jpg");
+    }
+}
+
+/* CSS for Phone */
+@media screen and (max-width: 767px) {
+    /* Add your CSS for Phone here */
+    nav::after {
+        content: "";
+        background: url("../img/codingNavBackground.jpg");
+    }
+}
+
+nav::after {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(3px);
+}
+
+nav {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+
+.navBarList {
+    list-style-type: none;
+    display: flex;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.navBarItem {
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navTitle {
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--deep-yellow);
+    text-shadow: 3px 1px 1px  var(--rich-purple);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.navBarItemText {
+    color: var(--deep-yellow);
+    text-shadow: -3px 2px 1px var(--rich-purple);
+    animation: fadeInUp 0.5s ease-out forwards;
+    padding: 0px;
+}
+
+.navBarItemText:hover {
+    color: var(--rich-purple);
+    text-shadow: -1px -1px 1px black, 1px 1px 1px black;
+}
+
+#navbarAccountMenu {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    margin-bottom: auto;
+    gap: 1rem;
+}

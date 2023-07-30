@@ -52,7 +52,7 @@ def index():
 
 @userBlueprint.route('/isLoggedIn', methods=["GET"])
 def checkSignedIn():
-    if current_user:
+    if current_user.is_authenticated:
         return ''.join(render_template('htmx/navbarSignedIn.html'))
     else:
         return ''.join(render_template('htmx/navbarSignedOut.html'))

@@ -8,6 +8,7 @@ from app.main.routes import routesBlueprint
 from app.users.controller import userBlueprint
 from flask_login import LoginManager
 from app.users.model import User
+
 login = LoginManager()
 
 def create_app(config_class=Config):

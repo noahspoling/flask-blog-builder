@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect, url_for, jsonify
 from app.posts.forms import PostForm
 from app.posts.service import createPost, getAllPosts, getPostById, updatePost, deletePost
+from flask_login import current_user, login_user, logout_user, login_required
 
 postsBlueprint = Blueprint('posts', __name__, url_prefix="/api/v1")
 

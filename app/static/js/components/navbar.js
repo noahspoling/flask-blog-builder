@@ -1,4 +1,5 @@
 import {html} from "../packages/arrow.js"
+import "../../css/navbarStyling.css"
 
 const navbar = html`
     <nav>
@@ -35,7 +36,7 @@ const navbar = html`
                 </a>
             </li>
         </ul>
-        <div hx-get="/user/isLoggedIn" hx-trigger="load" hx-swap="innerHTML">
+        <div id="navbarAccountMenu" hx-get="/user/isLoggedIn" hx-trigger="load" hx-swap="innerHTML">
             <!-- 
                 Loads this section of the navbar based on status of if they are logged in
                 check the user's controller for details
