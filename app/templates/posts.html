@@ -28,14 +28,10 @@
             <div id="rightSideBar"></div>
         </main>
     </div>
-    <!--
-        IMPORT COMPONENTS IN THIS SCRIPT TAG
-    -->
     <script type="module">
         import navbar from "{{ url_for('static', filename='js/components/navbar.js') }}"
         const root = document.getElementById("navbar-root")
         navbar(root)
-        // Your Arrow.js code here!
     </script>
 
 </body>

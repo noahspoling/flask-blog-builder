@@ -17,9 +17,6 @@
     <hr class="nav-line-break">
     <div id="content-root">
     </div>
-    <!--
-        IMPORT COMPONENTS IN THIS SCRIPT TAG
-    -->
     <script type="module">
         import navbar from "{{ url_for('static', filename='js/components/navbar.js') }}"
         import contactForm from "{{ url_for('static', filename='js/components/contentForm.js') }}"
@@ -27,7 +24,6 @@
         navbar(headerRoot)
         const contentRoot = document.getElementById("content-root")
         contactForm(contentRoot)
-        // Your Arrow.js code here!
     </script>
 </body>
 </html>
