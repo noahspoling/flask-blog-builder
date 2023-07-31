@@ -5,6 +5,15 @@ from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer
 import app
 
+def custom_login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not current_user.is_authenticated:
+            flash('You need to be an author to access this page.')
+            return redirect(url_for('main.loginRequired')) 
+        return f(*args, **kwargs)
+    return decorated_function
+
 def author_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):

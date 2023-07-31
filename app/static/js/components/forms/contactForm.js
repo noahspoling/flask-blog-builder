@@ -18,8 +18,8 @@ const contactForm = html`
             <textarea name="comment" id="inputComment" cols="30" rows="5"></textarea>
         </div>
         <div class="formGroup">
-            <button type="submit">Send</button>
-            <button type="reset">Clear</button>
+            <button class="formButton" type="submit">Send</button>
+            <button class="formButton" type="reset">Clear</button>
         </div>
     </form>
 `

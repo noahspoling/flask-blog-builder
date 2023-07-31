@@ -5,7 +5,7 @@ from app.users.model import User
 from app import db
 #from app.users.authCheck import confirm_token
 
-userBlueprint = Blueprint('users', __name__, url_prefix="/user")
+userBlueprint = Blueprint('users', __name__, url_prefix="/users")
 
 @userBlueprint.route('/login', methods=["GET", "POST"])
 def login():
@@ -43,7 +43,7 @@ def register():
         except Exception as e:
             print(f"An error occurred: {e}")
         
-        return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', title='Register', form=form)
     
 @userBlueprint.route('/index')
 @login_required
@@ -56,6 +56,15 @@ def checkSignedIn():
         return ''.join(render_template('htmx/navbarSignedIn.html'))
     else:
         return ''.join(render_template('htmx/navbarSignedOut.html'))
+
+#Renders template from query param based on if they are an author
+@userBlueprint.route('/isAuthor', methods=["GET"])
+def checkIfAuthor():
+    template_name = request.args.get('template', 'htmx/addContentButton.html')
+    if not current_user.isAuthor:
+        return ''.join(render_template(template_name))
+    else:
+        return
     
 @userBlueprint.route('/confirm/<token>')
 def confirm_email(token):

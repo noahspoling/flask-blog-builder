@@ -7,8 +7,8 @@ const contactForm = html`
             <input type="password" name="VerifyNewPassword" id="inputVerifyNewPassword">
         </div>
         <div class="formGroup">
-            <button type="submit">Send</button>
-            <button type="reset">Clear</button>
+            <button class="formButton" type="submit">Send</button>
+            <button class="formButton" type="reset">Clear</button>
         </div>
     </form>
 `

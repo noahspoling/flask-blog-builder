@@ -93,8 +93,8 @@ const contentForm = html`
         </div>
         ${() => optionState.options[optionState.selectedOption].element}
         <div class="formGroup">
-            <button type="submit">Send</button>
-            <button type="reset">Clear</button>
+            <button class="formButton" type="submit">Send</button>
+            <button class="formButton" type="reset">Clear</button>
         </div>
     </form>
 `

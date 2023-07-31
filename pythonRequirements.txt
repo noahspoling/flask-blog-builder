@@ -4,6 +4,7 @@ flask_wtf
 flask_login
 flask_mail
 wtform
+psycopg2-binary
 markdown
 prompt_toolkit
 python-dotenv

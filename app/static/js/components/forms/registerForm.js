@@ -1,7 +1,7 @@
 import {html} from "../../packages/arrow.js"
 
 const loginForm = html`
-    <form id="registerForm">
+    <form id="registerForm" hx-post="/users/register">
         <div class="formGroup">
             <label for="Username">Username</label>
             <input type="text" name="Username" id="inputUsername" required/>
@@ -19,8 +19,8 @@ const loginForm = html`
             <input type="password" name="VerifyPassword" id="inputVarifyPassword" required>
         </div>
         <div class="formGroup">
-            <button type="submit">Send</button>
-            <button type="reset">Clear</button>
+            <button class="formButton" type="submit">Send</button>
+            <button class="formButton" type="reset">Clear</button>
         </div>
     </form>
 `

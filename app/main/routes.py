@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request, render_template
 from flask_login import login_required
-from app.users.authCheck import author_required
+from app.users.authCheck import custom_login_required, author_required
 
 
 # from markdown_cms.posts.services import create_post, get_all_posts, get_post_by_id, update_post, delete_post
@@ -19,9 +19,8 @@ def index():
 def posts():
     return render_template("posts.html")
 
-@login_required
-@author_required
 @routesBlueprint.route('/AddContent')
+#@author_required
 def addContent():
     return render_template("addContent.html")
 
@@ -34,6 +33,7 @@ def aboutMe():
     return render_template("about.html")
 
 @routesBlueprint.route('/ContactMe')
+@custom_login_required
 def contactMe():
     return render_template("contact.html")
 
@@ -66,6 +66,7 @@ def changeForgottenPasswordForm():
 # Change the password of a logged in user
 
 @routesBlueprint.route('/ChangePasswordForm')
+@login_required
 def changePasswordForm():
     return render_template("changePassword.html")
 

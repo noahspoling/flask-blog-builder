@@ -65,3 +65,35 @@ input:active {
     box-shadow: none;
     border-style: none;
 }
+
+button {
+    max-width: 250px;
+    border-radius: 5px;
+    color: var(--deep-yellow);
+    padding: 1rem;
+    border-style: none;
+    background: var(--rich-purple);
+
+    transition: all 0.5s ease;
+    transform-origin: center;
+}
+button:hover {
+    border: 1px solid var(--rich-purple);
+    color: var(--rich-purple);
+    background-color: var(--deep-yellow);
+
+    transform: scale(1.1);
+}
+
+/* Button Styling for buttons on forms with the purple background */
+.formButton {
+    border: 1px solid var(--rich-purple);
+    color: var(--rich-purple);
+    background-color: var(--deep-yellow);
+}
+
+.formButton:hover {
+    border: 1px solid var(--deep-yellow);
+    color: var(--deep-yellow);
+    background-color: var(--rich-purple);
+}

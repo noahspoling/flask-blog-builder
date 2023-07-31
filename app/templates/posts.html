@@ -19,10 +19,7 @@
     <hr class="nav-line-break">
     <div id="content-root">
         <main id="postsOuterWindow">
-            <div id="leftSideBar">
-                <a href="/AddContent">
-                    <button id="buttonAddContent">Add Content</button>
-                </a>
+            <div id="leftSideBar" hx-get="/user/isAuthor?template=htmx/addContentButton.html" hx-trigger="load" hx-swap="innerHTML">
             </div>
             <div id="postsContainer" hx-get="/api/v1/render/post" hx-trigger="load" hx-swap="innerHTML">
             </div>
