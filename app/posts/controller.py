@@ -2,6 +2,7 @@ from flask import Flask, Blueprint, render_template, request, redirect, url_for,
 from app.posts.forms import PostForm
 from app.posts.service import createPost, getAllPosts, getPostById, updatePost, deletePost
 from flask_login import current_user, login_user, logout_user, login_required
+from app.users.authCheck import author_required
 
 postsBlueprint = Blueprint('posts', __name__, url_prefix="/api/v1")
 
@@ -11,6 +12,7 @@ def resource_not_found(e):
 
 
 @postsBlueprint.route('/post', methods=['POST'])
+@author_required
 def post():
     form = PostForm()
     if form.validate_on_submit():

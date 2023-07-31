@@ -18,12 +18,15 @@ def create_app(config_class=Config):
     app.config.from_object(Config)
 
     db.init_app(app)
-    login.init_app(app)
-    login.login_view = 'users.login'
     
+    
+    login.init_app(app)
     @login.user_loader
     def load_user(id):
         return User.Query.get(int(id))
+    
+    login.login_view = 'users.login'
+    
     
     with app.app_context():
         db.create_all()

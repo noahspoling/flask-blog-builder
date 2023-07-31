@@ -1,5 +1,4 @@
 import {html} from "../packages/arrow.js"
-import "../../css/navbarStyling.css"
 
 const navbar = html`
     <nav>

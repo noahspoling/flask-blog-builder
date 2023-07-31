@@ -10,7 +10,6 @@
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/navbarStyling.css') }}"></link>
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/inputStyling.css') }}"></link>
     <link rel="stylesheet" href= "{{ url_for('static', filename='css/forms/formsGeneralStyling.css') }}"></link>
-    <link rel="stylesheet" href= "{{ url_for('static', filename='css/contactMeLayout.css') }}"></link>
 </head>
 <body>
     <div id="navbar-root">
@@ -20,11 +19,13 @@
     </div>
     <script type="module">
         import navbar from "{{ url_for('static', filename='js/components/navbar.js') }}"
-        import contactForm from "{{ url_for('static', filename='js/components/forms/contentForm.js') }}"
+        import contentForm from "{{ url_for('static', filename='js/components/forms/contentForm.js') }}"
+        
         const headerRoot = document.getElementById("navbar-root")
-        navbar(headerRoot)
         const contentRoot = document.getElementById("content-root")
-        contactForm(contentRoot)
+
+        navbar(headerRoot)
+        contentForm(contentRoot)
     </script>
 </body>
 </html>

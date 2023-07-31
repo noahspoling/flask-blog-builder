@@ -3,7 +3,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.users.form import LoginForm, RegistrationForm
 from app.users.model import User
 from app import db
-
+#from app.users.authCheck import confirm_token
 
 userBlueprint = Blueprint('users', __name__, url_prefix="/user")
 
@@ -12,7 +12,7 @@ def login():
     if current_user.is_authenticated:
         return redirect(url_for("index"))
     form = LoginForm()
-    if form.valiate_on_submit():
+    if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
@@ -56,3 +56,19 @@ def checkSignedIn():
         return ''.join(render_template('htmx/navbarSignedIn.html'))
     else:
         return ''.join(render_template('htmx/navbarSignedOut.html'))
+    
+@userBlueprint.route('/confirm/<token>')
+def confirm_email(token):
+    try:
+        email = confirm_token(token)
+    except:
+        flash('The confirmation link is invalid or has expired.', 'danger')
+    user = User.query.filter_by(email=email).first_or_404()
+    if user.emailVerified:
+        flash('Account already confirmed. Please login.', 'success')
+    else:
+        user.emailVerified = True
+        db.session.add(user)
+        db.session.commit()
+        flash('You have confirmed your account. Thanks!', 'success')
+    return redirect(url_for("main.index"))
