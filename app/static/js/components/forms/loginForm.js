@@ -1,7 +1,7 @@
 import {html} from "../../packages/arrow.js"
 
 const loginForm = html`
-    <form hx-post="/users/login">
+    <form action="/users/login" method="post">
         <div class="formGroup">
             <label for="Username">Username</label>
             <input type="text" name="Username" id="inputUsername" required/>

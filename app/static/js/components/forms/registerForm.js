@@ -1,22 +1,22 @@
 import {html} from "../../packages/arrow.js"
 
-const loginForm = html`
-    <form id="registerForm" hx-post="/users/register">
+const registerForm = html`
+    <form id="registerForm" action="/users/register" method="post">
         <div class="formGroup">
-            <label for="Username">Username</label>
-            <input type="text" name="Username" id="inputUsername" required/>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="inputUsername" required/>
         </div>
         <div class="formGroup">
-            <label for="Email">Email</label>
-            <input type="email" name="Email" id="inputEmail" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="inputEmail" required>
         </div>
         <div class="formGroup">
-            <label for="Pasword">Password</label>
-            <input type="password" name="Password" id="inputPassword" required>
+            <label for="pasword">Password</label>
+            <input type="password" name="password" id="inputPassword" required>
         </div>
         <div class="formGroup">
-            <label for="VerifyPasword">Verify Password</label>
-            <input type="password" name="VerifyPassword" id="inputVarifyPassword" required>
+            <label for="verifypasword">Verify Password</label>
+            <input type="password" name="verifypassword" id="inputVarifyPassword" required>
         </div>
         <div class="formGroup">
             <button class="formButton" type="submit">Send</button>
@@ -25,4 +25,4 @@ const loginForm = html`
     </form>
 `
 
-export default loginForm;
+export default registerForm;

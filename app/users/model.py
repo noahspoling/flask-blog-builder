@@ -1,7 +1,7 @@
 from app.database.db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-
+from datetime import date
 '''
 import enum
 from sqlalchemy import Enum
@@ -19,7 +19,7 @@ class User(UserMixin, db.Model):
     isAuthor = db.Column(db.Boolean, default=False, nullable=False)
     isAdmin = db.Column(db.Boolean, default=False, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
-    date_created = db.Column(db.DateTime, nullable=False)
+    date_created = db.Column(db.DateTime, default=date.today(), nullable=False)
     
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
